@@ -2,6 +2,7 @@
 
 package simple
 import utest._
+
 object SimpleTest extends TestSuite{
   val tests = TestSuite{
     'format{
@@ -21,3 +22,4 @@ object SimpleTest extends TestSuite{
     }
   }
 }
+

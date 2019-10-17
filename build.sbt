@@ -13,7 +13,6 @@ val sharedSettings = Seq(
   autoCompilerPlugins := true
 )
 
-
 lazy val book = Project(
   id = "book",
   base = file("book")
@@ -50,7 +49,7 @@ lazy val book = Project(
       println("Already Cloned")
     }
   },
-  (run in Compile) <<= (run in Compile).dependsOn(cloneRepos),
+  (run in Compile) := (run in Compile).dependsOn(cloneRepos),
   initialize := {
     System.setProperty("clone.root", target.value.getAbsolutePath + "/clones")
     System.setProperty("output.root", target.value.getAbsolutePath + "/output")
